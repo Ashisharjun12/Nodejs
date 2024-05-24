@@ -11,13 +11,13 @@ fs.writeFile("./test" , 'hello world ' , (error)=>{
 })
 
 
-//readfile
+//readfile  ...blocking req
 
 const result = fs.readFileSync('./cont.txt','utf-8');//sync return somethsing
 console.log(result)
 
 
-//async read  return nothing and expect callback
+//async read  return nothing and expect callback  ....non-blocking req
 fs.readFile('./cont.txt' ,'utf-8' ,(err,res)=>{
     if(err){
         console.log(err)
