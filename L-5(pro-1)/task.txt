@@ -1,0 +1,14 @@
+//REST API --task
+
+GET/user - list all user
+
+GET/user/1 - get user with id 1
+GET/user/2 - get user with id 2
+
+POST /user - Creaate new user
+
+
+PATCH/user/1 - edit user with id 1
+
+DELETE/user/1 - delete user with id 1
+
