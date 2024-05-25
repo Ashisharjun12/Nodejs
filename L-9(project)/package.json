@@ -1,0 +1,23 @@
+{
+  "name": "l-9(project)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0",
+    "nanoid": "^5.0.7",
+    "shortid": "^2.2.16",
+    "ytid": "^1.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.1"
+  }
+}
