@@ -5,12 +5,26 @@ const fs = require('fs')
 
 const port = 4001
 
-
+//middlewares
 app.use(express.urlencoded({extended:true}))
+
+app.use((req,res ,next)=>{
+    console.log('hello middleware 1')
+   req.name= "ashish"
+    next()
+})
+
+app.use((req,res,next)=>{
+    console.log('hello middleware 2' ,  req.name)
+   
+    // res.json({msg:"middleware 2 "})
+    next()
+})
 
 
 //Routes
 app.get('/',(req,res)=>{
+    
     return res.send('hello')
 })
 
