@@ -1,8 +1,12 @@
 const express = require('express')
 const app = express()
 const users = require('./MOCK_DATA.json')
+const fs = require('fs')
 
 const port = 4001
+
+
+app.use(express.urlencoded({extended:true}))
 
 
 //Routes
@@ -37,7 +41,15 @@ app.get('/api/users/:id' ,(req,res)=>{
 
 app.post('/api/users' ,(req,res)=>{
     //todo :create users
-    return res.json({status : "pending"})
+
+    const {first_name ,last_name ,gender ,email ,job_title} = req.body
+    console.log(req.body)
+    users.push({...req.body , id:users.length +1})
+
+    fs.writeFile('./MOCK_DATA.json' , JSON.stringify(users) , (err ,data)=>{
+        return res.json({status : "success" , id: users.length})
+    })
+   
 
 
 })
