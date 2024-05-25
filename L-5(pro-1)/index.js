@@ -57,11 +57,16 @@ app.post('/api/users' ,(req,res)=>{
     //todo :create users
 
     const {first_name ,last_name ,gender ,email ,job_title} = req.body
+    if( !first_name || !last_name || !gender || !email || !job_title ){
+
+        return res.status(400).json({msg : "please fill the details"})
+
+    }
     console.log(req.body)
     users.push({...req.body , id:users.length +1})
 
     fs.writeFile('./MOCK_DATA.json' , JSON.stringify(users) , (err ,data)=>{
-        return res.json({status : "success" , id: users.length})
+        return res.status(201).json({status : "success" , id: users.length})
     })
    
 
